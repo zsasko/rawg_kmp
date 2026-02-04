@@ -1,6 +1,10 @@
 package com.zsasko.rawg_kmp.common
 
+import androidx.core.text.HtmlCompat
 
 fun String.stripHtmlTags(): String {
-    return this.replace(Regex(STRIP_HTML_REGEX), "")
+    return HtmlCompat.fromHtml(
+        this,
+        HtmlCompat.FROM_HTML_MODE_LEGACY
+    ).toString()
 }

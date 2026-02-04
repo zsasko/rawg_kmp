@@ -1,14 +1,11 @@
 package com.zsasko.rawg_kmp.ui.common.navigation
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
@@ -28,7 +25,7 @@ import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
-fun MainNavigator(innerPadding: PaddingValues) {
+fun MainNavigator() {
     val backStack = rememberNavBackStack(Routes.Splash)
     val currentRoute = backStack.lastOrNull() ?: Routes.Splash
 
@@ -56,7 +53,6 @@ fun MainNavigator(innerPadding: PaddingValues) {
     ) {
 
         NavDisplay(
-            modifier = Modifier.padding(innerPadding),
             backStack = backStack,
             onBack = { backStack.removeLastOrNull() },
             entryDecorators = listOf(

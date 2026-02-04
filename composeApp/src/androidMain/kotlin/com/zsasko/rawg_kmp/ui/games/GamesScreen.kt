@@ -85,7 +85,6 @@ private fun GamesScreenContent(
             && imageListItems.itemCount == 0
 
     Scaffold(
-        modifier = Modifier.padding(horizontal = 16.dp),
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -140,6 +139,7 @@ private fun GamesScreenLayout(
     LazyColumn(
         modifier = Modifier
             .padding(top = innerPadding.calculateTopPadding())
+            .padding(horizontal = 16.dp)
             .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
