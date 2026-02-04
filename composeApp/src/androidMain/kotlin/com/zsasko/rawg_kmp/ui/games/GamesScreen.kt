@@ -139,6 +139,7 @@ private fun GamesScreenLayout(
     LazyColumn(
         modifier = Modifier
             .padding(top = innerPadding.calculateTopPadding())
+            .padding(bottom = innerPadding.calculateBottomPadding())
             .padding(horizontal = 16.dp)
             .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(16.dp)
